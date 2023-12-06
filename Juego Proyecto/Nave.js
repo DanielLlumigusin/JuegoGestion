@@ -14,7 +14,7 @@ export class Nave {
       document.getElementById("lifes").textContent = this.vidas;
     } else {
       console.log("Juego Terminado");
-      window.location.href = "game-over.html";
+      window.location.href = "/Juego%20Proyecto/game-over.html";
     }
   }
 
