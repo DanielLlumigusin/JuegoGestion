@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Childs</title>
+    <link rel="stylesheet" href="./style/game-over.css" />
+  </head>
+  <body>
+    <div class="container-end">
+      <div class="items-end">
+        <div>
+          <h1>Happy Childs</h1>
+          <h2>Game Over</h2>
+          <h2>Puntos:<span id="score"></span></h2>
+        </div>
+        <div class="buttons">
+          <a type="button" class="regresar" href="index.html">REGRESAR</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      puntos = localStorage.getItem("score");
+      if (puntos !== null) {
+        document.getElementById("score").textContent = puntos;
+      }else{
+        document.getElementById("score").textContent = 0;
+      }
+    </script>
+  </body>
+</html>
