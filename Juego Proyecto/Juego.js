@@ -13,17 +13,16 @@ class Juego extends Nave {
 
   generadorPreguntas() {
     let num1 = Math.floor(Math.random() * 10);
-    let num2 = Math.floor(Math.random() * 10);
-    let pregunta = num1 + " + " + num2 + " = ?";
+    let pregunta = num1;
     this.preguntas.textContent = pregunta;
-    this.respuesta = num1 + num2;
+    this.respuesta = num1;
   }
 
   generadorNumerosCohetes() {
     // Generamos tres números aleatorios diferentes de respuesta
     let numerosAleatorios = [];
     while (numerosAleatorios.length < 3) {
-      let numeroAleatorio = Math.floor(Math.random() * 20) + 1;
+      let numeroAleatorio = Math.floor(Math.random() * 10);
       if (
         numeroAleatorio !== this.respuesta &&
         !numerosAleatorios.includes(numeroAleatorio)
