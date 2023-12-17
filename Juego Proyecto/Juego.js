@@ -4,18 +4,17 @@ import { Nave } from "./Nave.js";
 class Juego extends Nave {
   constructor() {
     super();
-    this.preguntas = document.getElementById("question");
+    this.pregunta = document.getElementById("question");
     this.respuesta = 0;
     this.puntos = parseInt(document.getElementById("score").textContent);
     this.numerosMezclados = [];
     this.iniciarJuego();
   }
 
-  generadorPreguntas() {
-    let num1 = Math.floor(Math.random() * 10);
-    let pregunta = num1;
-    this.preguntas.textContent = pregunta;
-    this.respuesta = num1;
+  generadorNumeros() {
+    let numero = Math.floor(Math.random() * 10);
+    this.pregunta.src = this.numerosImagenes[numero];
+    this.respuesta = numero;
   }
 
   generadorNumerosCohetes() {
@@ -35,7 +34,7 @@ class Juego extends Nave {
     this.numerosMezclados.sort(() => Math.random() - 0.5); // Mezcla aleatoria
 
     // Genera los numeros dentro de la nave
-    this.coheteNumero(this.numerosMezclados);
+    this.NumerosCohetes(this.numerosMezclados);
     console.log(this.numerosMezclados);
   }
 
@@ -55,7 +54,7 @@ class Juego extends Nave {
     });
   }
 
-  puntaje() {
+  AumentarPuntaje() {
     this.puntos += 1;
     document.getElementById("score").textContent = this.puntos;
     localStorage.setItem("score", JSON.stringify(this.puntos));
@@ -67,20 +66,20 @@ class Juego extends Nave {
     );
     if (this.numerosMezclados[numeroNave - 1] !== this.respuesta) {
       console.log("respuesta incorrecta");
-      this.equivoca();
+      this.ReduceVidas();
     } else {
       console.log("respuesta correcta");
-      this.puntaje();
+      this.AumentarPuntaje();
       // Llamar a las funciones de generación de pregunta y números de cohetes
       setTimeout(() => {
-        this.generadorPreguntas();
+        this.generadorNumeros();
         this.generadorNumerosCohetes();
       }, 1000); // Esperar 1 segundo (puedes ajustar este valor)
     }
   }
 
   iniciarJuego() {
-    this.generadorPreguntas();
+    this.generadorNumeros();
     this.generadorNumerosCohetes();
     this.coheteEventos();
     localStorage.clear();

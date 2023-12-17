@@ -11,57 +11,63 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1"></script>
     <link rel="stylesheet" href="./style/juego.css" />
   </head>
   <body>
     <div class="game">
-      <div class="score">Puntaje:<span id="score">0</span></div>
-      <div class="lifes">Vidas:<span id="lifes">3</span></div>
+      <div class="score">Puntaje: <span id="score">0</span></div>
+      <div class="lifes">Vidas: <span id="lifes">3</span></div>
       <div class="regresar">
-        <a href="/Juego%20Proyecto/"><img src="./img/atras.png" alt="" /></a>
+        <a href="/Juego%20Proyecto/">
+          <img src="./img/atras.png" alt="" />
+        </a>
       </div>
-
       <div class="naves">
         <div class="nave1">
-          <a class="button"
-            ><img
+          <div class="button">
+            <img class="numeros" id="1" src="" alt="" />
+            <img
               src="./img/cohete-naranja.png"
               class="img-nave"
               alt="cohete-rojo"
-          /></a>
-          <div class="numeros" id="1">4</div>
+            />
+          </div>
         </div>
         <div class="nave2">
-          <a class="button"
-            ><img
+          <div class="button">
+            <img class="numeros" id="2" src="" alt="" />
+            <img
               src="./img/cohete-azul.png"
               class="img-nave"
               alt="cohete-rojo"
-          /></a>
-          <div class="numeros" id="2">8</div>
+            />
+          </div>
         </div>
         <div class="nave3">
-          <a class="button"
-            ><img
+          <div class="button">
+            <img class="numeros" id="3" src="" alt="" />
+            <img
               src="./img/cohete-violeta.png"
               class="img-nave"
               alt="cohete-rojo"
-          /></a>
-          <div class="numeros" id="3">10</div>
+            />
+          </div>
         </div>
         <div class="nave4">
-          <a class="button"
-            ><img
+          <div class="button">
+            <img class="numeros" id="4" src="" alt="" />
+            <img
               src="./img/cohete-verde.png"
               class="img-nave"
               alt="cohete-rojo"
-          /></a>
-          <div class="numeros" id="4">19</div>
+            />
+          </div>
         </div>
       </div>
+
       <div class="div-question">
-        <p class="question" id="question">2+2=?</p>
+        <img class="question" id="question" src="" />
       </div>
     </div>
 
