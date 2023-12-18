@@ -11,6 +11,14 @@ class Juego extends Nave {
     this.iniciarJuego();
   }
 
+  openModal() {
+    document.getElementById("Modal").style.display = "block";
+  }
+
+  closeModal() {
+    document.getElementById("Modal").style.display = "none";
+  }
+
   generadorNumeros() {
     let numero = Math.floor(Math.random() * 10);
     this.pregunta.src = this.numerosImagenes[numero];
@@ -71,10 +79,13 @@ class Juego extends Nave {
       console.log("respuesta correcta");
       this.AumentarPuntaje();
       // Llamar a las funciones de generación de pregunta y números de cohetes
+      this.openModal();
+      
       setTimeout(() => {
+        this.closeModal();
         this.generadorNumeros();
         this.generadorNumerosCohetes();
-      }, 1000); // Esperar 1 segundo (puedes ajustar este valor)
+      }, 1500); // Esperar 1 segundo (puedes ajustar este valor)
     }
   }
 
