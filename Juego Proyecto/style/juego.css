@@ -53,6 +53,7 @@ body {
   margin-left: 12.3%;
   transform: translate(-50%, -50%);
   width: 2.5%;
+  /*filter: grayscale();*/
   z-index: 1;
 }
 
@@ -65,12 +66,17 @@ body {
 .lifes {
   position: absolute;
   top: 10%;
-  right: 75%;
+  left: 10%;
+}
+
+#lifes{
+  width: 30%;
 }
 
 .div-question {
   border: solid 10px rgb(52, 175, 212);
   background-color: rgb(255, 255, 255);
+ /* filter: grayscale();*/
   border-radius: 30px;
   position: relative;
   top: 90%;
