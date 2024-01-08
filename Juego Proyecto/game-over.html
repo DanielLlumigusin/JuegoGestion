@@ -28,8 +28,8 @@
       }
 
       document.addEventListener("keydown", (event) => {
-        const numeroTecla = parseInt(event.key);
-        if (numeroTecla === 5) {
+        const numeroTecla = event.key;
+        if (numeroTecla === "+") {
           const iniciar = document.querySelector(".regresar");
           if (iniciar) {
             iniciar.click();
