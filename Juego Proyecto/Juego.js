@@ -56,8 +56,25 @@ class Juego extends Nave {
     // Agregar escuchadores para teclas del 1 al 4
     document.addEventListener("keydown", (event) => {
       const numeroTecla = parseInt(event.key);
+      /*
       if (numeroTecla >= 1 && numeroTecla <= 4) {
         this.seleccionarNave(numeroTecla);
+      }
+      */
+      switch (numeroTecla) {
+        case 5:
+          this.seleccionarNave(1);
+          break;
+        case 6:
+          this.seleccionarNave(2);
+          break;
+        case 8:
+          this.seleccionarNave(3);
+          break;
+        case 9:
+          this.seleccionarNave(4);
+          break;
+        
       }
     });
   }
@@ -80,7 +97,7 @@ class Juego extends Nave {
       this.AumentarPuntaje();
       // Llamar a las funciones de generación de pregunta y números de cohetes
       this.openModal();
-      
+
       setTimeout(() => {
         this.closeModal();
         this.generadorNumeros();
