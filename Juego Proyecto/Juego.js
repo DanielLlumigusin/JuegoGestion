@@ -64,8 +64,15 @@ class Juego extends Nave {
 
   AumentarPuntaje() {
     this.puntos += 1;
+    document.getElementById("tanque").src = "./img/Tanque-"+this.puntos+".png";
+    
     document.getElementById("score").textContent = this.puntos;
     localStorage.setItem("score", JSON.stringify(this.puntos));
+
+    if(this.puntos>4){
+      window.location.href = "/Juego%20Proyecto/game-over.html";
+    }
+
   }
 
   seleccionarNave(numeroNave) {

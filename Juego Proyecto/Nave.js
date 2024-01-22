@@ -4,7 +4,7 @@ export class Nave {
     this.nave2 = document.getElementById("2");
     this.nave3 = document.getElementById("3");
     this.nave4 = document.getElementById("4");
-    this.vidas = parseInt(document.getElementById("lifes").textContent);
+    this.vidas = 3;
     this.numerosImagenes = [
       "./img/Numero_0.png",
       "./img/Numero_1.png",
@@ -30,7 +30,11 @@ export class Nave {
   ReduceVidas() {
     if (this.vidas !== 0) {
       this.vidas--;
-      document.getElementById("lifes").textContent = this.vidas;
+      if(this.vidas === 2) {
+        document.getElementById("lifes").src = "./img/MediaVida.png";
+      }else if(this.vidas === 1) {
+        document.getElementById("lifes").src = "./img/VidaVacia.png";
+      }
     } else {
       console.log("Juego Terminado");
       window.location.href = "/Juego%20Proyecto/game-over.html";
