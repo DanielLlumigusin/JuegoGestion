@@ -16,5 +16,16 @@
         </a>
       </div>
     </div>
+    <script>
+      document.addEventListener("keydown", (event) => {
+        const numeroTecla = parseInt(event.key);
+        if (numeroTecla === 7) {
+          const iniciar = document.querySelector(".btn-start");
+          if (iniciar) {
+            iniciar.click();
+          }
+        }
+      });
+    </script>
   </body>
 </html>

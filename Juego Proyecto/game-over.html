@@ -26,6 +26,16 @@
       }else{
         document.getElementById("score").textContent = 0;
       }
+
+      document.addEventListener("keydown", (event) => {
+        const numeroTecla = event.key;
+        if (numeroTecla === "+") {
+          const iniciar = document.querySelector(".regresar");
+          if (iniciar) {
+            iniciar.click();
+          }
+        }
+      });
     </script>
   </body>
 </html>

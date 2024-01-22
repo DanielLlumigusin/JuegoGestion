@@ -30,9 +30,15 @@ export class Nave {
   ReduceVidas() {
     if (this.vidas !== 0) {
       this.vidas--;
+
       if(this.vidas === 2) {
         document.getElementById("lifes").src = "./img/MediaVida.png";
       }else if(this.vidas === 1) {
+
+      if (this.vidas === 2) {
+        document.getElementById("lifes").src = "./img/MediaVida.png";
+      } else if (this.vidas === 1) {
+
         document.getElementById("lifes").src = "./img/VidaVacia.png";
       }
     } else {
